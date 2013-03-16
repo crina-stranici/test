@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database name="default" namespace="Crina\SiteManagement\Model" defaultIdMethod="native">
+
+    <table name="site">
+     <column name="id" type="integer" primaryKey="true" autoIncrement="true" />
+     <column name="name" type="varchar" />
+     <column name="url" type="varchar" />
+     <column name="is_active" type="boolean" />
+     <column name="created_at" type="timestamp" />
+    </table>        
+
+</database>

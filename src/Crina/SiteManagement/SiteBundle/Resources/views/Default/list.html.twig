@@ -1,0 +1,33 @@
+<div style="padding: 20px 0 0 50px;">
+  <table>
+    <thead>
+      <th>Name</th>
+      <th>Url</th>
+      <th>Is active</th>
+      <th>Created at</th>
+      <th>Actions</th>
+    </thead>
+    <tbody>
+      {% for st in site %}
+        <tr>
+          <td>{{ st.name }}</td>
+          <td>{{ st.url }}</td> 
+          <td>
+            {% if st.isActive %}
+              <span style="color:green;">active</span>
+            {% else %}
+              <span style="color:red;">inactive</span>
+            {% endif %}
+            </td> 
+          <td>{{ st.createdAt|date('d-m-Y')}}</td> 
+            <td>
+              <a href="{{ path('crina_site_management_site_edit', {'id': st.id} ) }}">Edit</a>            
+              <a href="{{ path('crina_site_management_site_delete', {'id': st.id} ) }}">Delete</a>
+            </td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  <br />
+  <a href="{{ path('crina_site_management_site_edit') }}">Add a new site</a>
+</div>

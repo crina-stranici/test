@@ -1,0 +1,11 @@
+crina_site_management_site_list:
+    pattern:  /list-sites
+    defaults: { _controller: CrinaSiteManagementSiteBundle:Default:list }
+    
+crina_site_management_site_edit:
+    pattern:  /edit-site/{id}
+    defaults: { _controller: CrinaSiteManagementSiteBundle:Default:edit, id: null }
+    
+crina_site_management_site_delete:
+    pattern: /delete-site/{id}
+    defaults: { _controller: CrinaSiteManagementSiteBundle:Default:delete, id: null }

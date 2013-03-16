@@ -1,0 +1,4 @@
+crina_site_management_site:
+    resource: "@CrinaSiteManagementSiteBundle/Resources/config/routing.yml"
+    prefix:   /
+

@@ -1,0 +1,9 @@
+<div style="padding: 20px 0 0 50px;">
+  <h3>Add a new site</h3>
+  <form action="{{ path('crina_site_management_site_edit', {'id' : id }) }}" method="post" {{ form_enctype(form) }}>
+      {{ form_errors(form) }}
+      {{ form_widget(form) }}
+      <br />
+      <input type="submit" value="Add site" />
+  </form>
+</div>
