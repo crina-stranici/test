@@ -1,6 +1,6 @@
 crina_site_management_site_list:
-    pattern:  /list-sites
-    defaults: { _controller: CrinaSiteManagementSiteBundle:Default:list }
+    pattern:  /list-sites/{page}
+    defaults: { _controller: CrinaSiteManagementSiteBundle:Default:list, page: 1 }
     
 crina_site_management_site_edit:
     pattern:  /edit-site/{id}

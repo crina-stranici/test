@@ -12,12 +12,13 @@ use Crina\SiteManagement\SiteBundle\Form\Type\SiteType;
 
 class DefaultController extends Controller
 {
-    public function listAction()
+    public function listAction($page)
     {
-        $site = SiteQuery::create()->find();
+        $site = SiteQuery::create()
+                ->paginate($page, $maxPerPage = 5);
         
         return $this->render('CrinaSiteManagementSiteBundle:Default:list.html.twig',
-            array('site' => $site));
+            array('site' => $site, 'currentPage' => $page));
     }
 
     public function editAction($id)

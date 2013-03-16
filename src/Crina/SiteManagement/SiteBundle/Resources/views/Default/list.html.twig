@@ -7,7 +7,7 @@
       <th>Created at</th>
       <th>Actions</th>
     </thead>
-    <tbody>
+    <tbody>      
       {% for st in site %}
         <tr>
           <td>{{ st.name }}</td>
@@ -31,3 +31,21 @@
   <br />
   <a href="{{ path('crina_site_management_site_edit') }}">Add a new site</a>
 </div>
+
+<div class="pagination">
+  
+{% if site.haveToPaginate() %}
+  {% if currentPage != 1 %}
+       <a class="previous" href="{{ path('crina_site_management_site_list', { 'page': currentPage-1 }) }}">Previous</a>
+   {% endif %}
+  {% for page in range(1, site.getLastPage()) %}
+    <a href="{{ path('crina_site_management_site_list', { 'page': page })}}">{{ page }}</a>
+  {% endfor %}
+  
+  {% if currentPage < site.getLastPage() %}
+    <a href="{{ path('crina_site_management_site_list', { 'page': currentPage+1 }) }}">Next</a>
+  {% endif %}
+{% endif %}
+    
+    
+  </div>
